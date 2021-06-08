@@ -1,0 +1,42 @@
+v.001
+* General Creation, some themes, setup, GUI, singletons, components
+* General Database setup
+* List of Functionalities:
+	1. Admin: Generate Archive
+		- Select folder
+		- Check if folder has no database
+		- Generate required files
+		- Generate database
+		- Generate database reference (to know where the database was previously)
+	2. Images: Upload Album
+		- Detect if valid type
+		- Show upload progress
+		- Stackable uploads
+		- Drag more than 1 image to album (Threaded)
+		- Rearrange Images in Album Setup
+		- Search tags to Add (To avoid issues of invalid tags)
+		- Remove image
+		- Accept Gif files and generates thumbnail
+		- Show image info and file type
+		- Generate Album if all required fields are placed (Title, tags, type and image) (Threaded)
+		- Refresh AlbumList when done
+		- Show Upload Progress and Delete Progress
+	3. MainPage: Navigate Pages
+		- Navigates to Admin
+		- Navigates to Images
+	4. Images: Load Albums
+		- Generates list of albums with their database
+		- Shows cover page and tags of Entry when hovered by mouse
+		- Shows albums based on recent dates, the most recent will be on the top
+	5. General: Show/Hide Search Bar
+	6. MainPage: Disable Images Button when no database is loaded and move to Admin Page
+	7. Images: Open Albums (Needs to be threaded)
+		- Loads first 10 images
+		- Contains a page button to show the next X images and so forth
+		- Dynamic Grid
+		- Contains control buttons to navigate division of images
+		- Delete album (You cannot delete when DataManager is still uploading
+		- Removes the album from the list immediately (Makes sure that it would disable going to the album being deleted)
+		- Close album
+	8. Images: Open Image from Album (Uses process)
+* Allows to create New Archive, can only upload if archive exists

@@ -1,0 +1,316 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Resources/DynamicFonts/BEON30.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Resources/DefaultTheme.tres" type="Theme" id=2]
+[ext_resource path="res://Resources/DynamicFonts/SansSerif20.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Assets/GUI/UploadBorder.png" type="Texture" id=4]
+[ext_resource path="res://Resources/DynamicFonts/SansSerif25.tres" type="DynamicFont" id=5]
+[ext_resource path="res://Scripts/Subpages/Images/UploadAlbum.cs" type="Script" id=6]
+[ext_resource path="res://Assets/FlatTextures/Black.png" type="Texture" id=7]
+[ext_resource path="res://Assets/FlatTextures/PinkBase.png" type="Texture" id=8]
+
+[node name="UploadImage" type="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.501961 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 15.0
+margin_top = 10.0
+margin_right = -15.0
+margin_bottom = -10.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Top" type="HBoxContainer" parent="VBoxContainer"]
+margin_right = 1070.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 0, 50 )
+
+[node name="Label" type="Label" parent="VBoxContainer/Top"]
+margin_top = 10.0
+margin_right = 1016.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 25
+text = "Drop Image Here, Drag Images to reorder"
+
+[node name="Button" type="Button" parent="VBoxContainer/Top"]
+margin_left = 1020.0
+margin_right = 1070.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
+theme = ExtResource( 2 )
+custom_fonts/font = ExtResource( 1 )
+text = "X"
+
+[node name="Body" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 54.0
+margin_right = 1070.0
+margin_bottom = 680.0
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Body"]
+margin_right = 666.0
+margin_bottom = 626.0
+rect_min_size = Vector2( 400, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ImageUpload" type="VBoxContainer" parent="VBoxContainer/Body/VBoxContainer"]
+margin_right = 666.0
+margin_bottom = 294.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Body/VBoxContainer/ImageUpload"]
+margin_right = 666.0
+margin_bottom = 270.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/Body/VBoxContainer/ImageUpload/HBoxContainer"]
+margin_right = 666.0
+margin_bottom = 270.0
+rect_min_size = Vector2( 0, 270 )
+size_flags_horizontal = 3
+
+[node name="AlbumGrid" type="GridContainer" parent="VBoxContainer/Body/VBoxContainer/ImageUpload/HBoxContainer/ScrollContainer"]
+margin_right = 666.0
+margin_bottom = 270.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 5
+
+[node name="TextureProgress" type="TextureProgress" parent="VBoxContainer/Body/VBoxContainer/ImageUpload"]
+margin_top = 274.0
+margin_right = 666.0
+margin_bottom = 294.0
+rect_min_size = Vector2( 0, 20 )
+texture_under = ExtResource( 7 )
+texture_progress = ExtResource( 8 )
+nine_patch_stretch = true
+
+[node name="Label" type="Label" parent="VBoxContainer/Body/VBoxContainer/ImageUpload/TextureProgress"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="HBoxContainer" parent="VBoxContainer/Body/VBoxContainer"]
+margin_top = 298.0
+margin_right = 666.0
+margin_bottom = 338.0
+rect_min_size = Vector2( 0, 40 )
+
+[node name="Label" type="Label" parent="VBoxContainer/Body/VBoxContainer/Title"]
+margin_top = 8.0
+margin_right = 85.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 85, 0 )
+custom_fonts/font = ExtResource( 3 )
+text = "Title: "
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/Body/VBoxContainer/Title"]
+margin_left = 89.0
+margin_right = 666.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+
+[node name="Artist" type="HBoxContainer" parent="VBoxContainer/Body/VBoxContainer"]
+margin_top = 342.0
+margin_right = 666.0
+margin_bottom = 382.0
+rect_min_size = Vector2( 0, 40 )
+
+[node name="Label" type="Label" parent="VBoxContainer/Body/VBoxContainer/Artist"]
+margin_top = 8.0
+margin_right = 85.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 85, 0 )
+custom_fonts/font = ExtResource( 3 )
+text = "Artist: "
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/Body/VBoxContainer/Artist"]
+margin_left = 89.0
+margin_right = 666.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+
+[node name="Type" type="VBoxContainer" parent="VBoxContainer/Body/VBoxContainer"]
+margin_top = 386.0
+margin_right = 666.0
+margin_bottom = 470.0
+
+[node name="Selected" type="HBoxContainer" parent="VBoxContainer/Body/VBoxContainer/Type"]
+margin_right = 666.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 40 )
+
+[node name="Label" type="Label" parent="VBoxContainer/Body/VBoxContainer/Type/Selected"]
+margin_top = 8.0
+margin_right = 85.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 85, 0 )
+custom_fonts/font = ExtResource( 3 )
+text = "Type(s): "
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/Body/VBoxContainer/Type/Selected"]
+margin_left = 89.0
+margin_right = 666.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 40 )
+size_flags_horizontal = 3
+scroll_vertical_enabled = false
+
+[node name="TypeList" type="HBoxContainer" parent="VBoxContainer/Body/VBoxContainer/Type/Selected/ScrollContainer"]
+margin_right = 577.0
+size_flags_horizontal = 3
+
+[node name="Selection" type="ScrollContainer" parent="VBoxContainer/Body/VBoxContainer/Type"]
+margin_top = 44.0
+margin_right = 666.0
+margin_bottom = 84.0
+rect_min_size = Vector2( 0, 40 )
+scroll_vertical_enabled = false
+
+[node name="OptionList" type="HBoxContainer" parent="VBoxContainer/Body/VBoxContainer/Type/Selection"]
+margin_right = 666.0
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Body/VBoxContainer"]
+margin_top = 474.0
+margin_right = 666.0
+margin_bottom = 602.0
+
+[node name="Genre" type="HBoxContainer" parent="VBoxContainer/Body/VBoxContainer/VBoxContainer"]
+margin_right = 666.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 40 )
+
+[node name="Label" type="Label" parent="VBoxContainer/Body/VBoxContainer/VBoxContainer/Genre"]
+margin_top = 8.0
+margin_right = 85.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 85, 0 )
+custom_fonts/font = ExtResource( 3 )
+text = "Add Tag:"
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/Body/VBoxContainer/VBoxContainer/Genre"]
+margin_left = 89.0
+margin_right = 666.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/Body/VBoxContainer/VBoxContainer"]
+margin_top = 44.0
+margin_right = 666.0
+margin_bottom = 84.0
+rect_min_size = Vector2( 0, 40 )
+scroll_vertical_enabled = false
+
+[node name="OptionList" type="HBoxContainer" parent="VBoxContainer/Body/VBoxContainer/VBoxContainer/ScrollContainer"]
+margin_right = 666.0
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Body/VBoxContainer/VBoxContainer"]
+margin_top = 88.0
+margin_right = 666.0
+margin_bottom = 128.0
+
+[node name="Label" type="Label" parent="VBoxContainer/Body/VBoxContainer/VBoxContainer/HBoxContainer"]
+margin_top = 8.0
+margin_right = 80.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 80, 0 )
+custom_fonts/font = ExtResource( 3 )
+text = "Tags:"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/Body/VBoxContainer/VBoxContainer/HBoxContainer"]
+margin_left = 84.0
+margin_right = 666.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 40 )
+size_flags_horizontal = 3
+scroll_vertical_enabled = false
+
+[node name="TagList" type="HBoxContainer" parent="VBoxContainer/Body/VBoxContainer/VBoxContainer/HBoxContainer/ScrollContainer"]
+margin_right = 582.0
+size_flags_horizontal = 3
+
+[node name="ImageDetails" type="VBoxContainer" parent="VBoxContainer/Body"]
+margin_left = 670.0
+margin_right = 1070.0
+margin_bottom = 626.0
+rect_min_size = Vector2( 400, 0 )
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/Body/ImageDetails"]
+margin_right = 400.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 100, 30 )
+custom_fonts/font = ExtResource( 3 )
+text = "Preview:"
+valign = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Body/ImageDetails"]
+margin_top = 34.0
+margin_right = 400.0
+margin_bottom = 474.0
+rect_min_size = Vector2( 0, 400 )
+size_flags_vertical = 3
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dimensions" type="Label" parent="VBoxContainer/Body/ImageDetails"]
+margin_top = 478.0
+margin_right = 400.0
+margin_bottom = 518.0
+rect_min_size = Vector2( 100, 40 )
+custom_fonts/font = ExtResource( 3 )
+text = "220x330"
+align = 1
+valign = 1
+
+[node name="Remove" type="Button" parent="VBoxContainer/Body/ImageDetails"]
+margin_top = 522.0
+margin_right = 400.0
+margin_bottom = 572.0
+rect_min_size = Vector2( 0, 50 )
+theme = ExtResource( 2 )
+custom_fonts/font = ExtResource( 5 )
+text = "Remove Image"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Add" type="Button" parent="VBoxContainer/Body/ImageDetails"]
+margin_top = 576.0
+margin_right = 400.0
+margin_bottom = 626.0
+rect_min_size = Vector2( 0, 50 )
+theme = ExtResource( 2 )
+custom_fonts/font = ExtResource( 5 )
+disabled = true
+text = "Add Album"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="VBoxContainer/Top/Button" to="." method="close"]
+[connection signal="text_changed" from="VBoxContainer/Body/VBoxContainer/Title/LineEdit" to="." method="toggleAddAlbum"]
+[connection signal="text_changed" from="VBoxContainer/Body/VBoxContainer/VBoxContainer/Genre/LineEdit" to="." method="showTags"]
+[connection signal="pressed" from="VBoxContainer/Body/ImageDetails/Remove" to="." method="removeImage"]
+[connection signal="pressed" from="VBoxContainer/Body/ImageDetails/Add" to="." method="addAlbum"]

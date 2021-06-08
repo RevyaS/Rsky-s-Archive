@@ -1,0 +1,45 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[  ]
+_global_script_class_icons={
+}
+
+[application]
+
+config/name="Rsky's Archive"
+run/main_scene="res://Pages/MainPage.tscn"
+run/low_processor_mode=true
+config/icon="res://icon.png"
+
+[autoload]
+
+UtilityFunctions="*res://Scripts/Singleton/UtilityFunctions.cs"
+SceneManager="*res://Scripts/Singleton/SceneManager.cs"
+ImageFunctions="*res://Scripts/Singleton/ImageFunctions.cs"
+DataManager="*res://Scripts/Singleton/DataManager.cs"
+GlobalData="*res://Scripts/Singleton/GlobalData.cs"
+
+[display]
+
+window/size/width=1100
+window/size/height=700
+
+[global]
+
+Environment=false
+
+[gui]
+
+timers/tooltip_delay_sec=0.3
+
+[logging]
+
+file_logging/enable_file_logging=true

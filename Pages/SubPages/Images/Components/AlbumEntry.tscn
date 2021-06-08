@@ -1,0 +1,90 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scripts/Subpages/Images/Components/AlbumEntry.cs" type="Script" id=1]
+[ext_resource path="res://Assets/FlatTextures/PinkBase.png" type="Texture" id=2]
+[ext_resource path="res://Assets/FlatTextures/PinkDark.png" type="Texture" id=3]
+
+[node name="AlbumEntry" type="TextureButton"]
+margin_right = 508.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 0, 60 )
+size_flags_horizontal = 3
+texture_normal = ExtResource( 2 )
+texture_disabled = ExtResource( 3 )
+expand = true
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Album" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 0.840881
+margin_right = 0.840881
+rect_min_size = Vector2( 0, 60 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Info1" type="VBoxContainer" parent="Album"]
+margin_right = 400.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 400, 0 )
+
+[node name="Title" type="Label" parent="Album/Info1"]
+margin_top = 4.0
+margin_right = 400.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 150, 20 )
+size_flags_vertical = 6
+text = "Ga Chuku"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Types" type="HBoxContainer" parent="Album/Info1"]
+margin_top = 32.0
+margin_right = 400.0
+margin_bottom = 60.0
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Type" type="Label" parent="Album/Info1/Types"]
+margin_top = 7.0
+margin_right = 80.0
+margin_bottom = 21.0
+rect_min_size = Vector2( 80, 0 )
+text = "Doujinshi"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Info2" type="VBoxContainer" parent="Album"]
+margin_left = 404.0
+margin_right = 554.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 150, 0 )
+size_flags_vertical = 3
+
+[node name="Artist" type="Label" parent="Album/Info2"]
+margin_top = 7.0
+margin_right = 150.0
+margin_bottom = 21.0
+size_flags_vertical = 6
+text = "Sky Freedom"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LastUpdate" type="Label" parent="Album/Info2"]
+margin_top = 39.0
+margin_right = 150.0
+margin_bottom = 53.0
+size_flags_vertical = 6
+text = "2021-06-01"
+__meta__ = {
+"_edit_use_anchors_": false
+}

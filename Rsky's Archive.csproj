@@ -1,0 +1,38 @@
+﻿<Project Sdk="Godot.NET.Sdk/3.3.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Tools</Configuration>
+    <ProjectGuid>{C2B47D34-C6C6-4208-94ED-F1C9FCA474B4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>RskysArchive</RootNamespace>
+    <AssemblyName>Rsky's Archive</AssemblyName>
+    <GodotProjectGeneratorVersion>1.0.7374.16792</GodotProjectGeneratorVersion>
+    <TargetFramework>net472</TargetFramework>
+    <!--The following properties were overriden during migration to prevent errors.
+    Enabling them may require other manual changes to the project and its files.-->
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <Deterministic>false</Deterministic>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data.SQLite, Version=1.0.114.0">
+      <HintPath>Libraries\System.Data.SQLite.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scripts\Components\TitleLabel.cs" />
+    <Compile Include="Scripts\MainPage.cs" />
+    <Compile Include="Scripts\Singleton\DataManager.cs" />
+    <Compile Include="Scripts\Singleton\GlobalData.cs" />
+    <Compile Include="Scripts\Singleton\ImageFunctions.cs" />
+    <Compile Include="Scripts\Singleton\SceneManager.cs" />
+    <Compile Include="Scripts\Singleton\UtilityFunctions.cs" />
+    <Compile Include="Scripts\Subpages\Admin.cs" />
+    <Compile Include="Scripts\Subpages\Images\Components\AlbumImage.cs" />
+    <Compile Include="Scripts\Subpages\Images\AlbumPage.cs" />
+    <Compile Include="Scripts\Subpages\Images\Components\AlbumEntry.cs" />
+    <Compile Include="Scripts\Subpages\Images\Images.cs" />
+    <Compile Include="Scripts\Subpages\Images\UploadAlbum.cs" />
+  </ItemGroup>
+</Project>

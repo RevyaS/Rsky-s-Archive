@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Subpages/Images/Components/AlbumImage.cs" type="Script" id=2]
+
+[node name="TextureButton2" type="TextureButton"]
+margin_right = 260.0
+margin_bottom = 260.0
+rect_min_size = Vector2( 260, 260 )
+mouse_filter = 1
+expand = true
+stretch_mode = 5
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

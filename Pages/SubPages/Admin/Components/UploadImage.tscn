@@ -1,0 +1,147 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Resources/DynamicFonts/BEON30.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Resources/DefaultTheme.tres" type="Theme" id=2]
+[ext_resource path="res://Resources/DynamicFonts/SansSerif20.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Assets/GUI/UploadBorder.png" type="Texture" id=4]
+[ext_resource path="res://Resources/DynamicFonts/SansSerif25.tres" type="DynamicFont" id=5]
+
+[node name="UploadImage" type="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.501961 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 15.0
+margin_top = 10.0
+margin_right = -15.0
+margin_bottom = -10.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Top" type="HBoxContainer" parent="VBoxContainer"]
+margin_right = 1070.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 0, 60 )
+
+[node name="Label" type="Label" parent="VBoxContainer/Top"]
+margin_top = 15.0
+margin_right = 1006.0
+margin_bottom = 45.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 25
+text = "Drag Image Here"
+
+[node name="Button" type="Button" parent="VBoxContainer/Top"]
+margin_left = 1010.0
+margin_right = 1070.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 60, 60 )
+theme = ExtResource( 2 )
+custom_fonts/font = ExtResource( 1 )
+text = "X"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+margin_top = 64.0
+margin_right = 1070.0
+margin_bottom = 680.0
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/VBoxContainer"]
+margin_right = 1070.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 0, 300 )
+texture = ExtResource( 4 )
+expand = true
+
+[node name="Title" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
+margin_top = 304.0
+margin_right = 1070.0
+margin_bottom = 354.0
+rect_min_size = Vector2( 0, 50 )
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer/Title"]
+margin_top = 13.0
+margin_right = 100.0
+margin_bottom = 37.0
+rect_min_size = Vector2( 100, 0 )
+custom_fonts/font = ExtResource( 3 )
+text = "Title: "
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/VBoxContainer/Title"]
+margin_left = 104.0
+margin_right = 1070.0
+margin_bottom = 50.0
+size_flags_horizontal = 3
+text = "asd"
+
+[node name="Artist" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
+margin_top = 358.0
+margin_right = 1070.0
+margin_bottom = 408.0
+rect_min_size = Vector2( 0, 50 )
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer/Artist"]
+margin_top = 13.0
+margin_right = 100.0
+margin_bottom = 37.0
+rect_min_size = Vector2( 100, 0 )
+custom_fonts/font = ExtResource( 3 )
+text = "Artist: "
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/VBoxContainer/Artist"]
+margin_left = 104.0
+margin_right = 1070.0
+margin_bottom = 50.0
+size_flags_horizontal = 3
+text = "asd"
+
+[node name="Type" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
+margin_top = 412.0
+margin_right = 1070.0
+margin_bottom = 462.0
+rect_min_size = Vector2( 0, 50 )
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer/Type"]
+margin_top = 13.0
+margin_right = 100.0
+margin_bottom = 37.0
+rect_min_size = Vector2( 100, 0 )
+custom_fonts/font = ExtResource( 3 )
+text = "Type: "
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/VBoxContainer/Type"]
+margin_left = 104.0
+margin_right = 1070.0
+margin_bottom = 50.0
+size_flags_horizontal = 3
+text = "asd"
+
+[node name="Genre" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
+margin_top = 466.0
+margin_right = 1070.0
+margin_bottom = 516.0
+rect_min_size = Vector2( 0, 50 )
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer/Genre"]
+margin_top = 13.0
+margin_right = 100.0
+margin_bottom = 37.0
+rect_min_size = Vector2( 100, 0 )
+custom_fonts/font = ExtResource( 3 )
+text = "Genre:"
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/VBoxContainer/Genre"]
+margin_left = 104.0
+margin_right = 1070.0
+margin_bottom = 50.0
+size_flags_horizontal = 3
+text = "asd"

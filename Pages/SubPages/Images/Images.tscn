@@ -1,0 +1,124 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scripts/Subpages/Images/Images.cs" type="Script" id=1]
+[ext_resource path="res://Resources/DynamicFonts/SansSerif16.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Resources/DefaultTheme.tres" type="Theme" id=3]
+[ext_resource path="res://Resources/DynamicFonts/SansSerif20.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Assets/FlatTextures/Black.png" type="Texture" id=5]
+[ext_resource path="res://test.jpg" type="Texture" id=6]
+[ext_resource path="res://Assets/FlatTextures/PinkBase.png" type="Texture" id=7]
+
+[node name="Control" type="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.0
+margin_right = 2.0
+margin_bottom = -105.0
+size_flags_vertical = 3
+color = Color( 0, 0, 0, 1 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 10.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Buttons" type="HBoxContainer" parent="VBoxContainer"]
+margin_right = 1100.0
+margin_bottom = 40.0
+
+[node name="Button" type="Button" parent="VBoxContainer/Buttons"]
+margin_right = 120.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 120, 40 )
+size_flags_horizontal = 2
+theme = ExtResource( 3 )
+custom_fonts/font = ExtResource( 4 )
+text = "Add album"
+
+[node name="TextureProgress" type="TextureProgress" parent="VBoxContainer/Buttons"]
+margin_left = 850.0
+margin_right = 1100.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 250, 20 )
+value = 25.0
+texture_under = ExtResource( 5 )
+texture_progress = ExtResource( 7 )
+nine_patch_stretch = true
+
+[node name="Label" type="Label" parent="VBoxContainer/Buttons/TextureProgress"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Div" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 44.0
+margin_right = 1100.0
+margin_bottom = 585.0
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Div"]
+margin_right = 1100.0
+margin_bottom = 541.0
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AlbumList" type="VBoxContainer" parent="VBoxContainer/Div/HBoxContainer"]
+margin_right = 796.0
+margin_bottom = 541.0
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Preview" type="VBoxContainer" parent="VBoxContainer/Div/HBoxContainer"]
+margin_left = 800.0
+margin_right = 1100.0
+margin_bottom = 541.0
+rect_min_size = Vector2( 300, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Div/HBoxContainer/Preview"]
+margin_right = 300.0
+margin_bottom = 400.0
+rect_min_size = Vector2( 0, 400 )
+texture = ExtResource( 6 )
+expand = true
+stretch_mode = 6
+
+[node name="Tags" type="Label" parent="VBoxContainer/Div/HBoxContainer/Preview"]
+margin_top = 404.0
+margin_right = 300.0
+margin_bottom = 423.0
+custom_fonts/font = ExtResource( 2 )
+align = 1
+valign = 1
+
+[node name="Pages" type="Label" parent="VBoxContainer/Div/HBoxContainer/Preview"]
+margin_top = 427.0
+margin_right = 300.0
+margin_bottom = 446.0
+custom_fonts/font = ExtResource( 2 )
+align = 1
+valign = 1
+
+[connection signal="pressed" from="VBoxContainer/Buttons/Button" to="." method="addAlbum"]
