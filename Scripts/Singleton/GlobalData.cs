@@ -13,10 +13,7 @@ public class GlobalData : Node
 	
 //	Const data
 //	TAGS
-	public static string[] imgTags = {"2D", "3D", "Anal", "Blonde", "Creampie", "Gangbang", 
-		"Loli", "Paizuri", "Rape", "Tentacles", "Vaginal"};
-	
-	public static string[] imgNwTags = {"Fan Art", "Manga", "Meme", "Original", "Pixel Art",
+	public static string[] imgTags = {"Fan Art", "Manga", "Meme", "Original", "Pixel Art",
 		"Sketch", "Western Comic"};
 	
 //	TYPES
